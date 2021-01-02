@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import "./util/_variables.scss";
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-areas: 
+    "header main"
+    "footer footer";
+  grid-template-columns: $nav-width calc(100% - #{$nav-width});
+  scroll-behavior: smooth;
+  word-break: normal;
+
+  header {
+    grid-area: header;
+    color: white;
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 9999;
+  
+    .logo-container {
+      width: $nav-width;
+      height: $nav-width;
+      padding: 10px;
+      background-color: rgb(40, 40, 40);
+      
+      .logo {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url("./../assets/images/icon-1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+    }
+
+    nav {
+      width: 100%;
+      height: auto;
+      top: 0;
+      position: sticky;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        li {
+          width: $nav-width;
+          height: $nav-width;
+          transition: height 0.4s ease-in-out;
+
+          a {
+            cursor: pointer;
+            display: flex;
+            width: $nav-width;
+            height: $nav-width;
+
+            svg {
+              width: 80%;
+              height: 80%;
+              margin: auto;
+            }
+
+          }
+
+          &::after {
+            content: attr(title);
+            width: $nav-width;
+            height: 0;
+            position: absolute;
+            left: 17px;
+            display: table-cell;
+            vertical-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            font-size: 0.7em;
+          }
+
+          &:hover {
+            height: $nav-width + 30px;
+
+            &::after {
+              opacity: 1;
+            }
+
+          }
+
+        } 
+
+      }
+
+    }
+
+  }
+    
+  main {
+    grid-area: main;
+    background-color: #c7bda7;
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    padding: 100px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    section {
+      width: auto;
+
+      h6 {
+        font-size: 1.5em;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+    }
+
+    .shameless-plugs .links {
+
+      $icon-size: 50px;
+
+      width: auto;
+      padding: 50px;
+      display: grid;
+      grid-template-areas: 
+        "instagram youtube"
+        "twitter otherwebsite";
+      row-gap: 50px;
+      column-gap: 50px;
+      grid-template-columns: $icon-size $icon-size;
+
+      
+      li {
+        a {
+          margin: auto;
+          width: $icon-size;
+          height: $icon-size;
+        }
+      }
+
+      .instagram {
+        grid-area: instagram;
+        a {
+          background-image: url("./../assets/svgs/iconmonstr-instagram-11.svg");
+        }
+      }
+      .youtube {
+        grid-area: youtube;
+        a {
+          background-image: url("./../assets/svgs/iconmonstr-youtube-9.svg");
+        }
+      }
+      .twitter {
+        grid-area: twitter;
+        a {
+          background-image: url("./../assets/svgs/iconmonstr-twitter-1.svg");
+        }
+      }
+      .other-website {
+        grid-area: otherwebsite;
+        a {
+          background-image: url("./../assets/svgs/web-white-18dp.svg");
+        }
+      }
+      
+    }
+
+    .credits {
+      width: 50%;
+    }
+
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::selection {
+    background-color: rgba(100, 100, 100, 0.5);
+  }
+}
+
+.fullscreen-section {
+  width: 100%;
+  height: 100vh;
+}
+
+h1, h2 {
+  font-family: "Josefin Slab";
+}
+h3, h4, h5, h6 {
+  font-family: "Poppins";
+}
+
+
+p {
+  font-family: "Kanit";
+}
+
+article p {
+  text-align: justify;
+}
+
+a {
+  color: gray;
+  cursor: pointer;
+}
+.image-link {
+  display: block;
+  background-size: contain;
+}
+
+// button container must have position set to relative
+button {
+  display: block;
+  border: none;
+  padding: 30px;
+  font-family: "Kanit";
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+
+  &::after, &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0px;
+    height: 3px;
+    margin: 3px 0 0;
+    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    background-color: rgb(20, 20, 20);
+    left: 0;
+  }
+
+  &:hover, &:focus {
+    background-color: rgb(230, 230, 230);
+
+    &::after, &::before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+}
+
+ul, ol {
+  font-family: "Kanit";
+}
+ul {
+  list-style: url("./../assets/svgs/done-black-18dp.svg");
+}
+
+img, video {
+  box-shadow: 0px 0px 5px 3px rgba(20, 20, 20, 0.5);
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  body footer {
+    padding: 50px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  body footer {
+    flex-direction: column;
+
+    
+    .credits {
+      width: 100%;
+    }
+    .shameless-plugs .links {
+      gap: 25px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 380px) {
+  body {
+    display: block;
+
+    header {
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      flex-direction: row;
+      width: 100%;
+      height: $nav-width;
+      overflow-x: auto;
+      overflow-y: hidden;
+  
+      nav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex: 1;
+        position: static;
+        top: 0;
+        width: calc(100% - #{$nav-width});
+        height: $nav-width;
+        ul {
+          flex-direction: row;
+          height: $nav-width;
+          list-style: none;
+        }
+      }
+
+      .logo-container {
+        width: $nav-width;
+        height: $nav-width;
+        padding: 10px;
+        background-color: rgb(40, 40, 40);
+        
+        .logo {
+          cursor: pointer;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-image: url("./../assets/images/icon-1.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+  
+      }
+  
+    }
+
+  }
+  main {
+    margin-top: $nav-width;
+  }
+}
