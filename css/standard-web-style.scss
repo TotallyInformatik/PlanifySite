@@ -19,6 +19,8 @@ p { font-size: 1.3rem;}
   }
 
   .content-box {
+    position: relative;
+    z-index: 99999;
     width: 100%;
     height: auto;
     padding: 100px;
@@ -36,9 +38,8 @@ p { font-size: 1.3rem;}
           margin-top: 5px;
           margin-left: 25px;
           li a {
-            position: relative;
-            z-index: 1;
             color: white;
+            text-decoration: underline;
             transition: font-size 0.2s ease;
             &:hover, &:focus {
               font-size: 1.1rem;

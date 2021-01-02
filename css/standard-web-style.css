@@ -32,6 +32,8 @@ p {
 }
 
 .hero-section .content-box {
+  position: relative;
+  z-index: 99999;
   width: 100%;
   height: auto;
   padding: 100px;
@@ -52,9 +54,8 @@ p {
 }
 
 .hero-section .content-box .summary-section article .page-summary li a {
-  position: relative;
-  z-index: 1;
   color: white;
+  text-decoration: underline;
   transition: font-size 0.2s ease;
 }
 
