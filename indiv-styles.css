@@ -289,15 +289,12 @@
   padding: 150px;
 }
 
-.downloads h2 {
+.downloads article h2 {
   font-size: 4em;
 }
 
-.downloads article {
-  margin: 40px 0;
-}
-
 .downloads article p {
+  margin: 40px 0;
   font-size: 2em;
 }
 
@@ -326,6 +323,20 @@
   width: 100%;
 }
 
+.simple-feedback-section {
+  padding: 150px;
+  background-color: whitesmoke;
+}
+
+.simple-feedback-section h2 {
+  font-size: 4em;
+}
+
+.simple-feedback-section p {
+  margin: 40px 0;
+  font-size: 2em;
+}
+
 @media only screen and (max-width: 1000px) {
   .hero-section-container {
     min-height: 700px;
@@ -349,10 +360,10 @@
     height: auto;
   }
   .hero-section-container .hero-section .heading-container article .heading {
-    font-size: 4em;
+    font-size: 4rem;
   }
   .hero-section-container .hero-section .heading-container article p {
-    font-size: 2em;
+    font-size: 2rem;
   }
   .hero-section-container .hero-section .image-container {
     position: static;
@@ -372,7 +383,7 @@
 
 @media only screen and (max-width: 1000px) {
   .presentation-section .content-container h2 {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 
@@ -394,7 +405,7 @@
   }
   .presentation-section .content-container .presentation-grid article h3 {
     line-height: 50px;
-    font-size: 2em;
+    font-size: 2rem;
   }
   .presentation-section .content-container .presentation-grid article ul {
     margin-top: 20px;
@@ -480,7 +491,7 @@
 
 @media only screen and (max-width: 1000px) {
   .reasoning h2 {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 
@@ -495,11 +506,14 @@
   .downloads .flex-container section {
     width: 150px;
   }
+  .simple-feedback-section {
+    padding: 10%;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-  .downloads h2 {
-    font-size: 3em;
+  .downloads h2, .simple-feedback-section h2 {
+    font-size: 3rem;
   }
 }
 

@@ -333,12 +333,12 @@ $outer-padding: 150px;
   background-color: white;
   padding: $outer-padding;
 
-  h2 {
-    font-size: $heading-2-font-size;
-  }
   article {
-    margin: 40px 0;
+    h2 {
+      font-size: $heading-2-font-size;
+    }
     p {
+      margin: 40px 0;
       font-size: 2em;
     }
   }
@@ -371,14 +371,29 @@ $outer-padding: 150px;
 
 }
 
-$new-h1-font-size: 4em;
-$new-h2-font-size: 3em;
-$new-h3-font-size: 2em;
-$new-p-font-size: 2em;
+.simple-feedback-section {
+  padding: $outer-padding;
+  background-color: whitesmoke;
+
+  h2 {
+    font-size: $heading-2-font-size;
+  }
+  p {
+    margin: 40px 0;
+    font-size: 2em;
+  }
+
+}
+
+
+$new-h1-font-size: 4rem;
+$new-h2-font-size: 3rem;
+$new-h3-font-size: 2rem;
+$new-p-font-size: 2rem;
 
 @media only screen and (max-width: 1000px) {
 
-  .hero-section-container {   
+  .hero-section-container {
     min-height: 700px;
     .hero-section {
       display: flex;
@@ -580,9 +595,12 @@ $new-p-font-size: 2em;
     }
 
   }
+  .simple-feedback-section {
+    padding: 10%;
+  }
 }
 @media only screen and (max-width: 1000px) {
-  .downloads h2 {
+  .downloads h2, .simple-feedback-section h2 {
     font-size: $new-h2-font-size;
   }
 }
