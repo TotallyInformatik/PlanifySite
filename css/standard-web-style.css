@@ -25,12 +25,10 @@ p {
   color: white;
   position: relative;
 }
-
 .hero-section .blob {
   position: absolute;
   z-index: 0;
 }
-
 .hero-section .content-box {
   position: relative;
   z-index: 99999;
@@ -38,7 +36,6 @@ p {
   height: auto;
   padding: 100px;
 }
-
 .hero-section .content-box .summary-section {
   margin-top: 15px;
   display: block;
@@ -47,22 +44,18 @@ p {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 .hero-section .content-box .summary-section article .page-summary {
   margin-top: 5px;
   margin-left: 25px;
 }
-
 .hero-section .content-box .summary-section article .page-summary li a {
   color: white;
   text-decoration: underline;
   transition: font-size 0.2s ease;
 }
-
 .hero-section .content-box .summary-section article .page-summary li a:hover, .hero-section .content-box .summary-section article .page-summary li a:focus {
   font-size: 1.1rem;
 }
-
 .hero-section .wave {
   z-index: 2;
   position: relative;
@@ -74,7 +67,6 @@ p {
   height: auto;
   padding: 100px 20%;
 }
-
 .standard-section p {
   margin-top: 20px;
 }
@@ -84,11 +76,9 @@ p {
   justify-content: space-between;
   align-items: center;
 }
-
 .image-section article {
   flex: 1;
 }
-
 .image-section img {
   flex: 1;
 }
@@ -117,4 +107,4 @@ p {
   h3 {
     font-size: 2rem;
   }
-}
+}/*# sourceMappingURL=standard-web-style.css.map */

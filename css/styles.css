@@ -1,33 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 body {
   width: 100%;
   overflow-x: hidden;
   display: grid;
-  grid-template-areas: "header main" "footer footer";
+  grid-template-areas: "header main" "footer footer";
   grid-template-columns: 80px calc(100% - 80px);
   scroll-behavior: smooth;
   word-break: normal;
 }
-
 body header {
   grid-area: header;
   color: white;
-  background-color: #323232;
+  background-color: rgb(50, 50, 50);
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 9999;
 }
-
 body header .logo-container {
   width: 80px;
   height: 80px;
   padding: 10px;
-  background-color: #282828;
+  background-color: rgb(40, 40, 40);
 }
-
 body header .logo-container .logo {
   cursor: pointer;
   display: block;
@@ -37,7 +31,6 @@ body header .logo-container .logo {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 body header nav {
   width: 100%;
   height: auto;
@@ -46,37 +39,31 @@ body header nav {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 body header nav::-webkit-scrollbar {
   display: none;
 }
-
 body header nav ul {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
 }
-
 body header nav ul li {
   width: 80px;
   height: 80px;
   transition: height 0.4s ease-in-out;
 }
-
 body header nav ul li a {
   cursor: pointer;
   display: flex;
   width: 80px;
   height: 80px;
 }
-
 body header nav ul li a svg {
   width: 80%;
   height: 80%;
   margin: auto;
 }
-
 body header nav ul li::after {
   content: attr(title);
   width: 80px;
@@ -89,89 +76,72 @@ body header nav ul li::after {
   transition: opacity 0.4s ease-in-out;
   font-size: 0.7em;
 }
-
 body header nav ul li:hover {
   height: 110px;
 }
-
 body header nav ul li:hover::after {
   opacity: 1;
 }
-
 body main {
   grid-area: main;
   background-color: #c7bda7;
 }
-
 body footer {
   grid-area: footer;
-  background-color: #1e1e1e;
+  background-color: rgb(30, 30, 30);
   color: white;
   padding: 100px;
   display: flex;
   justify-content: space-evenly;
 }
-
 body footer section {
   width: auto;
 }
-
 body footer section h6 {
   font-size: 1.5em;
 }
-
 body footer section ul {
   list-style: none;
 }
-
 body footer .shameless-plugs .links {
   width: auto;
   padding: 50px;
   display: grid;
-  grid-template-areas: "instagram youtube" "twitter otherwebsite";
+  grid-template-areas: "instagram youtube" "twitter otherwebsite";
   row-gap: 50px;
-  column-gap: 50px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
   grid-template-columns: 50px 50px;
 }
-
 body footer .shameless-plugs .links li a {
   margin: auto;
   width: 50px;
   height: 50px;
 }
-
 body footer .shameless-plugs .links .instagram {
   grid-area: instagram;
 }
-
 body footer .shameless-plugs .links .instagram a {
   background-image: url("./../assets/svgs/iconmonstr-instagram-11.svg");
 }
-
 body footer .shameless-plugs .links .youtube {
   grid-area: youtube;
 }
-
 body footer .shameless-plugs .links .youtube a {
   background-image: url("./../assets/svgs/iconmonstr-youtube-9.svg");
 }
-
 body footer .shameless-plugs .links .twitter {
   grid-area: twitter;
 }
-
 body footer .shameless-plugs .links .twitter a {
   background-image: url("./../assets/svgs/iconmonstr-twitter-1.svg");
 }
-
 body footer .shameless-plugs .links .other-website {
   grid-area: otherwebsite;
 }
-
 body footer .shameless-plugs .links .other-website a {
   background-image: url("./../assets/svgs/web-white-18dp.svg");
 }
-
 body footer .credits {
   width: 50%;
 }
@@ -181,7 +151,9 @@ body footer .credits {
   padding: 0;
   box-sizing: border-box;
 }
-
+*::-moz-selection {
+  background-color: rgba(100, 100, 100, 0.5);
+}
 *::selection {
   background-color: rgba(100, 100, 100, 0.5);
 }
@@ -192,11 +164,13 @@ body footer .credits {
 }
 
 h1, h2 {
+  font-weight: 500;
   font-family: "Josefin Slab";
 }
 
 h3, h4, h5, h6 {
   font-family: "Poppins";
+  font-weight: 400;
 }
 
 p {
@@ -225,7 +199,6 @@ button {
   cursor: pointer;
   transition: background-color 0.4s ease-in-out;
 }
-
 button::after, button::before {
   content: "";
   position: absolute;
@@ -235,14 +208,12 @@ button::after, button::before {
   margin: 3px 0 0;
   transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
   opacity: 0;
-  background-color: #141414;
+  background-color: rgb(20, 20, 20);
   left: 0;
 }
-
 button:hover, button:focus {
-  background-color: #e6e6e6;
+  background-color: rgb(230, 230, 230);
 }
-
 button:hover::after, button:hover::before, button:focus::after, button:focus::before {
   width: 100%;
   opacity: 1;
@@ -265,7 +236,6 @@ img, video {
     padding: 50px;
   }
 }
-
 @media only screen and (max-width: 700px) {
   body footer {
     flex-direction: column;
@@ -277,7 +247,6 @@ img, video {
     gap: 25px;
   }
 }
-
 @media screen and (max-width: 380px) {
   body {
     display: block;
@@ -310,7 +279,7 @@ img, video {
     width: 80px;
     height: 80px;
     padding: 10px;
-    background-color: #282828;
+    background-color: rgb(40, 40, 40);
   }
   body header .logo-container .logo {
     cursor: pointer;
@@ -324,4 +293,4 @@ img, video {
   main {
     margin-top: 80px;
   }
-}
+}/*# sourceMappingURL=styles.css.map */
